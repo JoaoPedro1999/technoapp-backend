@@ -22,3 +22,14 @@ Factory.blueprint("App/Models/User", (faker, i, data = {}) => {
     ...data
   };
 });
+
+Factory.blueprint("App/Models/Company", (faker, i, data = {}) => {
+  return {
+    corporate_name: faker.sentence({ words: 2 }),
+    address: faker.paragraph(),
+    cnpj: faker.string(),
+    phone: faker.string(),
+    email: faker.email(),
+    ...data
+  };
+});

@@ -21,3 +21,7 @@ Route.get("/", () => {
 });
 
 Route.post("/sessions", "SessionController.store");
+
+Route.group(() => {
+  Route.resource("/company", "CompanyController").apiOnly();
+}).middleware("auth");
