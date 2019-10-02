@@ -21,7 +21,14 @@ Route.get("/", () => {
 });
 
 Route.post("/sessions", "SessionController.store");
+Route.post("/solicitation", "SolicitationController.store").validator(
+  "Solicitation"
+);
 
 Route.group(() => {
   Route.resource("/company", "CompanyController").apiOnly();
+
+  Route.get("/solicitation", "SolicitationController.index");
+  Route.get("/solicitation/:id", "SolicitationController.show");
+  Route.delete("/solicitation/:id", "SolicitationController.destroy");
 }).middleware("auth");

@@ -46,15 +46,15 @@ test("it should be able to list companies", async ({ assert, client }) => {
 test("it should be able to show single company", async ({ assert, client }) => {
   const user = await Factory.model("App/Models/User").create();
 
-  const compamy = await Factory.model("App/Models/Company").create();
+  const company = await Factory.model("App/Models/Company").create();
 
   const response = await client
-    .get(`/company/${compamy.id}`)
+    .get(`/company/${company.id}`)
     .loginVia(user, "jwt")
     .end();
 
   response.assertStatus(200);
-  assert.deepEqual(response.body.corporate_name, compamy.corporate_name);
+  assert.deepEqual(response.body.corporate_name, company.corporate_name);
 });
 
 test("it should be able to update company", async ({ assert, client }) => {

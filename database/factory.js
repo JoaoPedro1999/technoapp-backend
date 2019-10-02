@@ -26,10 +26,20 @@ Factory.blueprint("App/Models/User", (faker, i, data = {}) => {
 Factory.blueprint("App/Models/Company", (faker, i, data = {}) => {
   return {
     corporate_name: faker.sentence({ words: 2 }),
-    address: faker.paragraph(),
+    address: faker.string(),
     cnpj: faker.string(),
     phone: faker.string(),
     email: faker.email(),
+    ...data
+  };
+});
+
+Factory.blueprint("App/Models/Solicitation", (faker, i, data = {}) => {
+  return {
+    requester: faker.sentence({ words: 2 }),
+    machine: faker.sentence({ words: 2 }),
+    phone: faker.string(),
+    issue_reported: faker.paragraph(),
     ...data
   };
 });
