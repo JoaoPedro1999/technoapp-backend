@@ -43,3 +43,11 @@ Factory.blueprint("App/Models/Solicitation", (faker, i, data = {}) => {
     ...data
   };
 });
+
+Factory.blueprint("App/Models/Service", (faker, i, data = {}) => {
+  return {
+    description: faker.sentence({ words: 2 }),
+    price: faker.floating({ min: 1, max: 100, fixed: 7 }),
+    ...data
+  };
+});
