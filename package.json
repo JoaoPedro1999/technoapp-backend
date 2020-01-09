@@ -8,6 +8,19 @@
     "start": "node server.js",
     "test": "node ace test"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "cross-env CI=true yarn test --bail --findRelatedTests",
+      "git add"
+    ]
+  },
   "keywords": [
     "adonisjs",
     "adonis-app"
@@ -16,7 +29,7 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
-    "@adonisjs/ace": "^5.0.8",
+    "@adonisjs/ace": "^6.8.0",
     "@adonisjs/antl": "^2.0.7",
     "@adonisjs/auth": "^3.0.7",
     "@adonisjs/bodyparser": "^2.0.5",
@@ -31,7 +44,17 @@
     "pg": "^7.12.1"
   },
   "devDependencies": {
-    "sqlite3": "^4.1.0"
+    "commitizen": "^4.0.3",
+    "cross-env": "^6.0.3",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.0.3",
+    "lint-staged": "^9.5.0",
+    "sqlite3": "^4.1.1"
   },
   "autoload": {
     "App": "./app"
