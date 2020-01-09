@@ -6,4 +6,14 @@
 
 ## Technologies used during development
 
+### -> NodeJS
+
+### -> AdonisJS
+
+### -> TravisCI
+
+### -> Husky
+
+### -> Commitizen
+
 ** Coming soon **
