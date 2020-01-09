@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/JoaoPedro1999/techonoapp-backend.svg?branch=master)](https://travis-ci.org/JoaoPedro1999/techonoapp-backend)
+[![Build Status](https://travis-ci.org/JoaoPedro1999/technoapp-backend.svg?branch=master)](https://travis-ci.org/JoaoPedro1999/technoapp-backend)
 
 # TechnoApp API application
 
